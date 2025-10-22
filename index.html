@@ -67,7 +67,9 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0083CA 0%, #005DAA 100%);
+            background: linear-gradient(135deg, rgba(0, 131, 202, 0.92) 0%, rgba(0, 93, 170, 0.92) 100%), 
+                        url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&q=80') center/cover;
+            background-attachment: fixed;
             color: white;
             min-height: 500px;
             display: flex;
@@ -117,6 +119,13 @@
             background-size: cover;
             background-position: center;
             position: relative;
+        }
+        
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         
         .cta-group {
@@ -522,7 +531,7 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <img src="https://www.expresspros.com/assets/svg/logos/express-employment-professionals-logo-blue.svg" alt="Express Employment Professionals" class="logo">
+                <img src="https://www.expresspros.com/globalassets/express-employment-professionals/images/express-logo.svg" alt="Express Employment Professionals" class="logo" onerror="this.src='https://www.expresspros.com/assets/svg/logos/express-employment-professionals-logo-blue.svg'">
                 <a href="#get-started" class="header-cta">Get Started Today</a>
             </div>
         </div>
@@ -534,14 +543,16 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Your Workforce Solution Starts Here</h1>
-                    <p class="subheading">Partner with Express Employment Professionals for reliable, pre-qualified talent that drives your business forward.</p>
+                    <p class="subheading">Partner with Express Employment Professionals for reliable, pre-qualified talent that drives your business forward. With 870+ offices nationwide, we're your local HR solution backed by global resources.</p>
                     <p class="hero-tagline">Let us put our more than four decades of staffing experience and expertise to work for you.</p>
                     
                     <div class="cta-group">
                         <a href="#get-started" class="btn-primary">Find an Express Location Near You</a>
                     </div>
                 </div>
-                <div class="hero-image-container" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80');"></div>
+                <div class="hero-image-container">
+                    <img src="workforce-solutions-content-image-600x338.webp" alt="Express Employment Professionals - Professional Interview">
+                </div>
             </div>
         </div>
     </section>
