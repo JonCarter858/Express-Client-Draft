@@ -219,37 +219,62 @@
         }
         
         .challenge-card {
-            background: #f9f9f9;
+            background-size: cover;
+            background-position: center;
             border-radius: 12px;
             padding: 40px 30px;
             text-align: center;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            position: relative;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .challenge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(123, 63, 153, 0.7) 0%, rgba(0, 93, 170, 0.85) 100%);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .challenge-card:hover::before {
+            background: linear-gradient(180deg, rgba(123, 63, 153, 0.85) 0%, rgba(0, 93, 170, 0.95) 100%);
         }
         
         .challenge-card:hover {
-            background: white;
-            border-color: #005DAA;
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 93, 170, 0.15);
+            box-shadow: 0 12px 30px rgba(0, 93, 170, 0.25);
+        }
+        
+        .challenge-card > * {
+            position: relative;
+            z-index: 1;
         }
         
         .challenge-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            display: none;
         }
         
         .challenge-title {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
-            color: #005DAA;
+            color: white;
             margin-bottom: 15px;
         }
         
         .challenge-description {
-            color: #666;
+            color: white;
             line-height: 1.7;
             font-size: 16px;
+            font-weight: 300;
         }
         
         /* Services Section */
@@ -433,7 +458,7 @@
         
         .cta-section > p {
             font-size: 20px;
-            margin-bottom: 50px;
+            margin-bottom: 100px;
             font-weight: 300;
         }
         
@@ -626,38 +651,32 @@
             </div>
             
             <div class="challenges-grid">
-                <div class="challenge-card">
-                    <div class="challenge-icon">📊</div>
+                <div class="challenge-card" style="background-image: url('GettyImages-1425293645.jpg');">
                     <h3 class="challenge-title">High Turnover Rates</h3>
                     <p class="challenge-description">Reduce costly turnover with our proven evaluation hire process. Test candidates on the job before making permanent commitments.</p>
                 </div>
                 
-                <div class="challenge-card">
-                    <div class="challenge-icon">⚖️</div>
+                <div class="challenge-card" style="background-image: url('GettyImages-501222552.jpg');">
                     <h3 class="challenge-title">Regulatory Compliance</h3>
                     <p class="challenge-description">Navigate complex labor laws and regulations with confidence. We handle compliance so you can focus on your business.</p>
                 </div>
                 
-                <div class="challenge-card">
-                    <div class="challenge-icon">🔍</div>
+                <div class="challenge-card" style="background-image: url('GettyImages-1147109837.jpg');">
                     <h3 class="challenge-title">Time-Consuming Screening</h3>
                     <p class="challenge-description">Save valuable time with our pre-screened, skills-tested candidates. We do the heavy lifting so you get qualified workers faster.</p>
                 </div>
                 
-                <div class="challenge-card">
-                    <div class="challenge-icon">💰</div>
+                <div class="challenge-card" style="background-image: url('GettyImages-1284066336.jpg');">
                     <h3 class="challenge-title">Cost Management</h3>
                     <p class="challenge-description">Control staffing costs with flexible solutions. From temporary to direct hire, we help you optimize your workforce budget.</p>
                 </div>
                 
-                <div class="challenge-card">
-                    <div class="challenge-icon">⚡</div>
+                <div class="challenge-card" style="background-image: url('GettyImages-973712582.jpg');">
                     <h3 class="challenge-title">Rapid Scaling Needs</h3>
                     <p class="challenge-description">Respond quickly to business demands. Our nationwide network delivers qualified workers when and where you need them.</p>
                 </div>
                 
-                <div class="challenge-card">
-                    <div class="challenge-icon">🎯</div>
+                <div class="challenge-card" style="background-image: url('GettyImages-1427631515.jpg');">
                     <h3 class="challenge-title">Finding Quality Talent</h3>
                     <p class="challenge-description">Access our extensive candidate network built over four decades. Get pre-qualified talent that matches your specific needs.</p>
                 </div>
