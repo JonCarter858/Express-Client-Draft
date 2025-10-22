@@ -48,7 +48,7 @@
         }
         
         .logo {
-            height: 50px;
+            height: 70px;
         }
         
         .header-cta {
@@ -67,49 +67,61 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,93,170,0.85), rgba(0,93,170,0.85)), url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920') center/cover;
+            background: linear-gradient(135deg, #0083CA 0%, #005DAA 100%);
             color: white;
-            padding: 80px 0;
-            text-align: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .hero .container {
+            max-width: 100%;
+            padding: 0;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .hero-text {
+            padding: 60px 80px;
         }
         
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             line-height: 1.2;
         }
         
         .hero .subheading {
-            font-size: 22px;
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 20px;
+            margin-bottom: 25px;
             font-weight: 300;
+            line-height: 1.6;
         }
         
-        .hero-images {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 40px 0;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero-tagline {
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-weight: 400;
+            line-height: 1.6;
         }
         
-        .hero-image {
-            border-radius: 8px;
-            overflow: hidden;
-            height: 250px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        .hero-image-container {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
         
         .cta-group {
             display: flex;
             gap: 20px;
-            justify-content: center;
             flex-wrap: wrap;
         }
         
@@ -210,57 +222,44 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
         
         .service-card {
             background: white;
-            padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
             overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #005DAA, #7B3F99);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
         }
         
         .service-image {
-            width: 100%;
-            height: 180px;
-            background: #f0f0f0;
-            border-radius: 4px;
-            margin-bottom: 20px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
         }
         
         .service-title {
             font-size: 24px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 15px;
+            font-weight: 700;
+            color: #005DAA;
+            padding: 25px 25px 15px;
         }
         
         .service-description {
+            padding: 0 25px 20px;
             color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         
         .service-features {
+            padding: 0 25px 25px;
             list-style: none;
         }
         
@@ -279,57 +278,47 @@
             font-weight: bold;
         }
         
-        /* Team Photos Section */
+        /* Team Photos */
         .team-photos {
             padding: 80px 0;
-            background: #f7f7f7;
+            background: white;
         }
         
         .photos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-top: 50px;
         }
         
         .photo-card {
-            background: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
         
         .photo-card:hover {
-            transform: translateY(-5px);
+            transform: scale(1.03);
         }
         
         .photo-placeholder {
             height: 250px;
-            background: #e0e0e0;
-            border-radius: 4px 4px 0 0;
+            background-size: cover;
+            background-position: center;
         }
         
         .photo-caption {
-            padding: 20px;
+            padding: 15px;
+            background: white;
             text-align: center;
             font-weight: 500;
-            color: #333;
+            color: #005DAA;
         }
         
         /* Process Section */
         .process {
             padding: 80px 0;
-            background: linear-gradient(135deg, #005DAA 0%, #004a8a 100%);
-            color: white;
-        }
-        
-        .process .section-title {
-            color: white;
-        }
-        
-        .process .section-subtitle {
-            color: rgba(255,255,255,0.9);
+            background: #f7f7f7;
         }
         
         .process-steps {
@@ -341,107 +330,115 @@
         
         .process-step {
             text-align: center;
-            position: relative;
+            padding: 30px;
         }
         
         .step-number {
             width: 80px;
             height: 80px;
-            background: white;
-            color: #7B3F99;
+            background: #7B3F99;
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
         }
         
         .step-title {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #005DAA;
+            margin-bottom: 15px;
         }
         
         .step-description {
-            opacity: 0.9;
-            line-height: 1.6;
-            font-weight: 300;
+            color: #666;
+            line-height: 1.7;
         }
         
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
-            background: white;
+            background: linear-gradient(135deg, #005DAA 0%, #7B3F99 100%);
+            color: white;
             text-align: center;
         }
         
         .cta-section h2 {
             font-size: 42px;
             font-weight: 700;
-            color: #005DAA;
             margin-bottom: 20px;
         }
         
-        .cta-section p {
+        .cta-section > p {
             font-size: 20px;
-            color: #666;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             font-weight: 300;
         }
         
         .form-container {
-            max-width: 500px;
+            max-width: 700px;
             margin: 0 auto;
             background: white;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: left;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
             color: #333;
             font-weight: 500;
+            margin-bottom: 8px;
         }
         
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
             font-size: 16px;
-            font-family: 'Roboto', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #005DAA;
         }
         
         .form-submit {
             width: 100%;
+            padding: 16px;
             background: #7B3F99;
             color: white;
-            padding: 16px;
             border: none;
             border-radius: 30px;
             font-size: 18px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            margin-top: 10px;
         }
         
         .form-submit:hover {
             background: #6B3589;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 63, 153, 0.4);
         }
         
         /* Footer */
         .footer {
-            background: #333;
+            background: #1a1a1a;
             color: white;
             padding: 40px 0;
             text-align: center;
@@ -452,7 +449,7 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 20px;
         }
         
         .footer-links {
@@ -465,44 +462,57 @@
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
-            font-weight: 300;
         }
         
         .footer-links a:hover {
             color: #7B3F99;
         }
         
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
+            .hero-content {
+                grid-template-columns: 1fr;
             }
             
-            .hero-images {
-                grid-template-columns: 1fr;
+            .hero-text {
+                padding: 40px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero .subheading {
+                font-size: 18px;
+            }
+            
+            .hero-image-container {
+                height: 300px;
             }
             
             .section-title {
                 font-size: 32px;
             }
             
-            .services-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
             .photos-grid {
                 grid-template-columns: 1fr;
             }
             
-            .cta-group {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
             .footer-content {
                 flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
             }
         }
     </style>
@@ -512,27 +522,26 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <img src="https://i.imgur.com/NMDIBgT.png" alt="Express Employment Professionals" class="logo">
+                <img src="https://www.expresspros.com/assets/svg/logos/express-employment-professionals-logo-blue.svg" alt="Express Employment Professionals" class="logo">
                 <a href="#get-started" class="header-cta">Get Started Today</a>
             </div>
         </div>
     </header>
-
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Your Workforce Solution Starts Here</h1>
-            <p class="subheading">Partner with Express Employment Professionals for reliable, pre-qualified talent that drives your business forward. With 870+ offices nationwide, we're your local HR solution backed by global resources.</p>
-            
-            <div class="hero-images">
-                <div class="hero-image" style="background: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400') center/cover;"></div>
-                <div class="hero-image" style="background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400') center/cover;"></div>
-                <div class="hero-image" style="background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400') center/cover;"></div>
-            </div>
-            
-            <div class="cta-group">
-                <a href="https://www.expresspros.com/locations" class="btn-primary">Find an Express Location Near You</a>
-                <a href="https://www.expresspros.com/employers/workforce-solutions" class="btn-secondary">Explore Our Services</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Your Workforce Solution Starts Here</h1>
+                    <p class="subheading">Partner with Express Employment Professionals for reliable, pre-qualified talent that drives your business forward.</p>
+                    <p class="hero-tagline">Let us put our more than four decades of staffing experience and expertise to work for you.</p>
+                    
+                    <div class="cta-group">
+                        <a href="#get-started" class="btn-primary">Find an Express Location Near You</a>
+                    </div>
+                </div>
+                <div class="hero-image-container" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80');"></div>
             </div>
         </div>
     </section>
@@ -629,10 +638,6 @@
                 <div class="photo-card">
                     <div class="photo-placeholder" style="background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400') center/cover;"></div>
                     <div class="photo-caption">Flexible Staffing Anywhere</div>
-                </div>
-                <div class="photo-card">
-                    <div class="photo-placeholder" style="background: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400') center/cover;"></div>
-                    <div class="photo-caption">Modern Workforce Ready</div>
                 </div>
             </div>
         </div>
