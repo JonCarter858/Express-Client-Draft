@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employers | Express Employment Professionals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: #ffffff;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+        }
+        
+        .header-cta {
+            background: #005DAA;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        
+        .header-cta:hover {
+            background: #004a8a;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,93,170,0.85), rgba(0,93,170,0.85)), url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920') center/cover;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero .subheading {
+            font-size: 22px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+        
+        .hero-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-image {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: #7B3F99;
+            color: white;
+            padding: 16px 35px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(123, 63, 153, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: #6B3589;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 63, 153, 0.4);
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 16px 35px;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #005DAA;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-card {
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #005DAA;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f7f7f7;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #005DAA;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #005DAA, #7B3F99);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 180px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .service-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .service-features {
+            list-style: none;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            color: #333;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #7B3F99;
+            font-weight: bold;
+        }
+        
+        /* Team Photos Section */
+        .team-photos {
+            padding: 80px 0;
+            background: #f7f7f7;
+        }
+        
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .photo-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .photo-placeholder {
+            height: 250px;
+            background: #e0e0e0;
+            border-radius: 4px 4px 0 0;
+        }
+        
+        .photo-caption {
+            padding: 20px;
+            text-align: center;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #005DAA 0%, #004a8a 100%);
+            color: white;
+        }
+        
+        .process .section-title {
+            color: white;
+        }
+        
+        .process .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: white;
+            color: #7B3F99;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .step-description {
+            opacity: 0.9;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #005DAA;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: #7B3F99;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .form-submit:hover {
+            background: #6B3589;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+        }
+        
+        .footer-links a:hover {
+            color: #7B3F99;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .services-grid,
+            .photos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <img src="https://i.imgur.com/NMDIBgT.png" alt="Express Employment Professionals" class="logo">
+                <a href="#get-started" class="header-cta">Get Started Today</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your Workforce Solution Starts Here</h1>
+            <p class="subheading">Partner with Express Employment Professionals for reliable, pre-qualified talent that drives your business forward. With 870+ offices nationwide, we're your local HR solution backed by global resources.</p>
+            
+            <div class="hero-images">
+                <div class="hero-image" style="background: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400') center/cover;"></div>
+                <div class="hero-image" style="background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400') center/cover;"></div>
+                <div class="hero-image" style="background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400') center/cover;"></div>
+            </div>
+            
+            <div class="cta-group">
+                <a href="https://www.expresspros.com/locations" class="btn-primary">Find an Express Location Near You</a>
+                <a href="https://www.expresspros.com/employers/workforce-solutions" class="btn-secondary">Explore Our Services</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$3.7B</div>
+                    <div class="stat-label">2024 Revenue</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">427,000</div>
+                    <div class="stat-label">Workers Placed in 2024</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">11M+</div>
+                    <div class="stat-label">Total Placements Since 1983</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">870+</div>
+                    <div class="stat-label">Local Offices Globally</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Staffing Solutions That Work for You</h2>
+                <p class="section-subtitle">From temporary staffing to direct hire, we offer flexible solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image" style="background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=350') center/cover;"></div>
+                    <h3 class="service-title">Temporary Staffing</h3>
+                    <p class="service-description">Quick access to qualified workers for seasonal peaks, special projects, or unexpected absences.</p>
+                    <ul class="service-features">
+                        <li>Same-day placement available</li>
+                        <li>Pre-screened and skills-tested</li>
+                        <li>We handle all payroll and benefits</li>
+                        <li>Workers' comp coverage included</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=350') center/cover;"></div>
+                    <h3 class="service-title">Evaluation Hire</h3>
+                    <p class="service-description">Try before you hire. Evaluate workers on the job before making a permanent commitment.</p>
+                    <ul class="service-features">
+                        <li>Reduce hiring risks by 85%</li>
+                        <li>See actual job performance</li>
+                        <li>No placement fees after trial</li>
+                        <li>Cultural fit assessment</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=350') center/cover;"></div>
+                    <h3 class="service-title">Direct Hire</h3>
+                    <p class="service-description">Find your next permanent team member with our comprehensive recruiting services.</p>
+                    <ul class="service-features">
+                        <li>Executive search capabilities</li>
+                        <li>Extensive candidate network</li>
+                        <li>Background checks included</li>
+                        <li>Replacement guarantee</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Photos Section -->
+    <section class="team-photos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience the Express Difference</h2>
+                <p class="section-subtitle">Real people delivering real results for your business</p>
+            </div>
+            
+            <div class="photos-grid">
+                <div class="photo-card">
+                    <div class="photo-placeholder" style="background: url('https://images.unsplash.com/photo-1528605105345-5344ea20e269?w=400') center/cover;"></div>
+                    <div class="photo-caption">Building Your Success Together</div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder" style="background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400') center/cover;"></div>
+                    <div class="photo-caption">Unified Workforce Solutions</div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder" style="background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400') center/cover;"></div>
+                    <div class="photo-caption">Flexible Staffing Anywhere</div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder" style="background: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400') center/cover;"></div>
+                    <div class="photo-caption">Modern Workforce Ready</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Getting started with Express is simple and fast</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Connect</h3>
+                    <p class="step-description">Reach out to your local Express office or submit our quick form</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Consult</h3>
+                    <p class="step-description">We'll understand your needs, timeline, and workforce requirements</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Match</h3>
+                    <p class="step-description">Receive pre-screened candidates matched to your specific needs</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Start</h3>
+                    <p class="step-description">Your new team members begin work, with our ongoing support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section" id="get-started">
+        <div class="container">
+            <h2>Start Building Your Workforce Today</h2>
+            <p>Connect with your local Express office for a free consultation</p>
+            
+            <div class="form-container">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="zip">ZIP Code</label>
+                        <input type="text" id="zip" name="zip" required placeholder="Find your local office">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="need">Staffing Need</label>
+                        <select id="need" name="need">
+                            <option value="">Select your primary need</option>
+                            <option value="temporary">Temporary Staffing</option>
+                            <option value="evaluation">Evaluation Hire</option>
+                            <option value="direct">Direct Hire</option>
+                            <option value="industrial">Industrial/Warehouse</option>
+                            <option value="office">Office/Administrative</option>
+                            <option value="professional">Professional Roles</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Get Your Free Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>&copy; 2025 Express Employment Professionals. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="https://www.expresspros.com/privacy-policy">Privacy Policy</a>
+                    <a href="https://www.expresspros.com/website-terms-and-conditions">Terms of Service</a>
+                    <a href="https://www.expresspros.com/website-contact">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
