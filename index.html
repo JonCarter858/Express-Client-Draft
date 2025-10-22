@@ -205,6 +205,53 @@
             font-weight: 400;
         }
         
+        /* Workforce Challenges Section */
+        .challenges-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .challenge-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .challenge-card:hover {
+            background: white;
+            border-color: #005DAA;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 93, 170, 0.15);
+        }
+        
+        .challenge-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .challenge-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #005DAA;
+            margin-bottom: 15px;
+        }
+        
+        .challenge-description {
+            color: #666;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        
         /* Services Section */
         .services {
             padding: 80px 0;
@@ -390,61 +437,48 @@
             font-weight: 300;
         }
         
-        .form-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         
-        .form-group {
-            margin-bottom: 25px;
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            color: #333;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-        
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #005DAA;
-        }
-        
-        .form-submit {
-            width: 100%;
-            padding: 16px;
+        .btn-cta-primary {
+            display: inline-block;
             background: #7B3F99;
             color: white;
-            border: none;
+            padding: 18px 40px;
             border-radius: 30px;
             font-size: 18px;
             font-weight: 600;
-            cursor: pointer;
+            text-decoration: none;
             transition: all 0.3s ease;
-            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(123, 63, 153, 0.3);
         }
         
-        .form-submit:hover {
+        .btn-cta-primary:hover {
             background: #6B3589;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(123, 63, 153, 0.4);
+        }
+        
+        .btn-cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 18px 40px;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta-secondary:hover {
+            background: white;
+            color: #005DAA;
         }
         
         /* Footer */
@@ -583,6 +617,54 @@
         </div>
     </section>
     
+    <!-- Workforce Challenges Section -->
+    <section class="challenges-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Common Workforce Challenges We Solve</h2>
+                <p class="section-subtitle">In today's competitive job market, businesses face numerous obstacles. We help you overcome them.</p>
+            </div>
+            
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <div class="challenge-icon">📊</div>
+                    <h3 class="challenge-title">High Turnover Rates</h3>
+                    <p class="challenge-description">Reduce costly turnover with our proven evaluation hire process. Test candidates on the job before making permanent commitments.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">⚖️</div>
+                    <h3 class="challenge-title">Regulatory Compliance</h3>
+                    <p class="challenge-description">Navigate complex labor laws and regulations with confidence. We handle compliance so you can focus on your business.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">🔍</div>
+                    <h3 class="challenge-title">Time-Consuming Screening</h3>
+                    <p class="challenge-description">Save valuable time with our pre-screened, skills-tested candidates. We do the heavy lifting so you get qualified workers faster.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">💰</div>
+                    <h3 class="challenge-title">Cost Management</h3>
+                    <p class="challenge-description">Control staffing costs with flexible solutions. From temporary to direct hire, we help you optimize your workforce budget.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">⚡</div>
+                    <h3 class="challenge-title">Rapid Scaling Needs</h3>
+                    <p class="challenge-description">Respond quickly to business demands. Our nationwide network delivers qualified workers when and where you need them.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">🎯</div>
+                    <h3 class="challenge-title">Finding Quality Talent</h3>
+                    <p class="challenge-description">Access our extensive candidate network built over four decades. Get pre-qualified talent that matches your specific needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
@@ -695,51 +777,12 @@
     <!-- CTA Section -->
     <section class="cta-section" id="get-started">
         <div class="container">
-            <h2>Start Building Your Workforce Today</h2>
-            <p>Connect with your local Express office for a free consultation</p>
+            <h2>Ready to Overcome Your Workforce Challenges?</h2>
+            <p>Let Express Employment Professionals help you build a stronger, more productive team</p>
             
-            <div class="form-container">
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" name="company" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="zip">ZIP Code</label>
-                        <input type="text" id="zip" name="zip" required placeholder="Find your local office">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="need">Staffing Need</label>
-                        <select id="need" name="need">
-                            <option value="">Select your primary need</option>
-                            <option value="temporary">Temporary Staffing</option>
-                            <option value="evaluation">Evaluation Hire</option>
-                            <option value="direct">Direct Hire</option>
-                            <option value="industrial">Industrial/Warehouse</option>
-                            <option value="office">Office/Administrative</option>
-                            <option value="professional">Professional Roles</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="form-submit">Get Your Free Consultation</button>
-                </form>
+            <div class="cta-buttons">
+                <a href="https://www.expresspros.com/locations" class="btn-cta-primary">Find Your Local Office</a>
+                <a href="https://www.expresspros.com/employers/top-challenges" class="btn-cta-secondary">Learn About Common Hiring Challenges</a>
             </div>
         </div>
     </section>
