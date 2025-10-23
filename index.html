@@ -219,8 +219,6 @@
         }
         
         .challenge-card {
-            background-size: cover;
-            background-position: center;
             border-radius: 12px;
             padding: 40px 30px;
             text-align: center;
@@ -231,39 +229,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            overflow: hidden;
-        }
-        
-        .challenge-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: inherit;
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            z-index: 0;
-        }
-        
-        .challenge-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, rgba(123, 63, 153, 0.4) 0%, rgba(0, 93, 170, 0.6) 100%);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            z-index: 1;
-        }
-        
-        .challenge-card:hover::after {
-            background: linear-gradient(180deg, rgba(123, 63, 153, 0.5) 0%, rgba(0, 93, 170, 0.7) 100%);
+            /* Gradient overlay will be combined with background-image in inline styles */
         }
         
         .challenge-card:hover {
@@ -669,32 +635,32 @@
             </div>
             
             <div class="challenges-grid">
-                <div class="challenge-card" style="background-image: url('GettyImages-1425293645.jpg');">
+                <div class="challenge-card" style="background: linear-gradient(180deg, rgba(123, 63, 153, 0.6) 0%, rgba(0, 93, 170, 0.8) 100%), url('GettyImages-1425293645.jpg') center/cover;">
                     <h3 class="challenge-title">High Turnover Rates</h3>
                     <p class="challenge-description">Reduce costly turnover with our proven evaluation hire process. Test candidates on the job before making permanent commitments.</p>
                 </div>
                 
-                <div class="challenge-card" style="background-image: url('GettyImages-501222552.jpg');">
+                <div class="challenge-card" style="background: linear-gradient(180deg, rgba(123, 63, 153, 0.6) 0%, rgba(0, 93, 170, 0.8) 100%), url('GettyImages-501222552.jpg') center/cover;">
                     <h3 class="challenge-title">Regulatory Compliance</h3>
                     <p class="challenge-description">Navigate complex labor laws and regulations with confidence. We handle compliance so you can focus on your business.</p>
                 </div>
                 
-                <div class="challenge-card" style="background-image: url('GettyImages-1093508248.jpg');">
+                <div class="challenge-card" style="background: linear-gradient(180deg, rgba(123, 63, 153, 0.6) 0%, rgba(0, 93, 170, 0.8) 100%), url('GettyImages-1093508248.jpg') center/cover;">
                     <h3 class="challenge-title">Time-Consuming Screening</h3>
                     <p class="challenge-description">Save valuable time with our pre-screened, skills-tested candidates. We do the heavy lifting so you get qualified workers faster.</p>
                 </div>
                 
-                <div class="challenge-card" style="background-image: url('GettyImages-1434119139.jpg');">
+                <div class="challenge-card" style="background: linear-gradient(180deg, rgba(123, 63, 153, 0.6) 0%, rgba(0, 93, 170, 0.8) 100%), url('GettyImages-1434119139.jpg') center/cover;">
                     <h3 class="challenge-title">Cost Management</h3>
                     <p class="challenge-description">Control staffing costs with flexible solutions. From temporary to direct hire, we help you optimize your workforce budget.</p>
                 </div>
                 
-                <div class="challenge-card" style="background-image: url('GettyImages-1423550628.jpg');">
+                <div class="challenge-card" style="background: linear-gradient(180deg, rgba(123, 63, 153, 0.6) 0%, rgba(0, 93, 170, 0.8) 100%), url('GettyImages-1423550628.jpg') center/cover;">
                     <h3 class="challenge-title">Rapid Scaling Needs</h3>
                     <p class="challenge-description">Respond quickly to business demands. Our nationwide network delivers qualified workers when and where you need them.</p>
                 </div>
                 
-                <div class="challenge-card" style="background-image: url('GettyImages-598261008.jpg');">
+                <div class="challenge-card" style="background: linear-gradient(180deg, rgba(123, 63, 153, 0.6) 0%, rgba(0, 93, 170, 0.8) 100%), url('GettyImages-598261008.jpg') center/cover;">
                     <h3 class="challenge-title">Finding Quality Talent</h3>
                     <p class="challenge-description">Access our extensive candidate network built over four decades. Get pre-qualified talent that matches your specific needs.</p>
                 </div>
